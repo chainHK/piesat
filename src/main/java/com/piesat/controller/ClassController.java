@@ -17,8 +17,6 @@ import com.piesat.entity.Class;
 import com.piesat.service.IClassService;
 import com.piesat.utils.JsonResult;
 
-import lombok.extern.slf4j.Slf4j;
-
 /**
  * <p>
  *  前端控制器
@@ -49,7 +47,6 @@ public class ClassController{
 	
 	@GetMapping("/showAllClassPage")
 	public JsonResult showAllClassPage(@RequestParam Map<String, Object> map) {
-		
 		
 		IPage<com.piesat.entity.Class> page = new Page<>(1, 2);
 				

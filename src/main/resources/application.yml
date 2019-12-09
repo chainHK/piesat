@@ -12,6 +12,7 @@ server:
 logging: 
   file: ./logs/core.log
   level: 
+     #com.piesat: error
      com.piesat.mapper: debug
 
 mybatis-plus:

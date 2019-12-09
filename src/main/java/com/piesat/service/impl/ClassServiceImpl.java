@@ -16,5 +16,5 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class ClassServiceImpl extends ServiceImpl<ClassDao, Class> implements IClassService {
-
+	
 }
