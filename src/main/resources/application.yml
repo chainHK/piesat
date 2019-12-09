@@ -1,0 +1,53 @@
+spring:
+ #激活哪一个环境的配置文件
+  profiles:
+  #测试环境
+    active: dev
+  #正式环境
+    #active: pro
+
+server:
+  port: 8080  
+
+logging: 
+  file: ./logs/core.log
+  level: 
+     com.piesat.mapper: debug
+
+--- 
+
+spring:
+  profiles: dev
+  datasource:
+    name: mysqlDatasource
+    #测试服务器地址
+    url: jdbc:mysql://localhost:3306/testsql?useUnicode=true&characterEncoding=utf8&useSSL=false&tinyInt1isBit=true
+    #测试数据库账号
+    username: root
+    #测试数据库密码
+    password: root
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+    filters: stat,wall
+#    filters: stat,wall,log4j
+    initialSize: 5
+    maxActive: 20
+    maxPoolPreparedStatementPerConnectionSize: 20
+    maxWait: 60000
+    minEvictableIdleTimeMillis: 300000
+    minIdle: 5
+    poolPreparedStatements: true
+    testOnBorrow: false
+    testOnReturn: false
+    testWhileIdle: true
+    timeBetweenEvictionRunsMillis: 60000
+    useGlobalDataSourceStat: true
+    validationQuery: SELECT 1 FROM DUAL
+
+mybatis-plus:
+  #MyBatis 配置文件位置，如果您有单独的 MyBatis 配置，请将其路径配置到 configLocation 中
+  mapper-locations: classpath*:mybatis/*.xml
+  #MyBaits 别名包扫描路径，通过该属性可以给包中的类注册别名，注册后在 Mapper 对应的 XML 文件中可以直接使用类名，
+  #而不用使用全限定的类名（即 XML 中调用的时候不用包含包名）。
+  type-aliases-package: com.piesat.entity
