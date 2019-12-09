@@ -4,7 +4,7 @@ spring:
   #测试环境
     active: dev
   #正式环境
-    #active: pro
+    #active: prod
 
 server:
   port: 8080  
