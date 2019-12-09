@@ -23,7 +23,7 @@ import java.util.Arrays;
 @Aspect
 @Component
 @Slf4j
-public class AspectLogs {
+public class AspectLogsConfig {
 
      //切点整个所有包
      @Pointcut("execution(public * com.piesat.controller.*.*(..))")

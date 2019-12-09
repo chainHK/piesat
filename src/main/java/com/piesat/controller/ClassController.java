@@ -27,7 +27,7 @@ import lombok.extern.slf4j.Slf4j;
  * @author xk
  * @since 2019-12-08
  */
-@Slf4j
+
 @RestController
 @RequestMapping("/class")
 public class ClassController{
