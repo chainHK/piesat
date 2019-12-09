@@ -13,7 +13,7 @@
 	<groupId>com.piesat</groupId>
 	<artifactId>piesat-project</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>maven-plugin-build-docker</name>
+	<name>piesat-project</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
