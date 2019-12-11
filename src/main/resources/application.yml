@@ -10,7 +10,7 @@ server:
   port: 8080  
 
 logging: 
-  file: ./logs/core.log
+  #file: ./logs/core.log
   level: 
      #com.piesat: error
      com.piesat.mapper: debug
@@ -28,7 +28,7 @@ spring:
   datasource:
     name: mysqlDatasource
     #测试服务器地址
-    url: jdbc:mysql://192.168.164.131:3306/testsql?useUnicode=true&characterEncoding=utf8&useSSL=false&tinyInt1isBit=true
+    url: jdbc:mysql://localhost:3306/testsql?useUnicode=true&characterEncoding=utf8&useSSL=false&tinyInt1isBit=true
     #测试数据库账号
     username: root
     #测试数据库密码
