@@ -1,7 +1,7 @@
 package com.piesat.service;
 
-import com.piesat.entity.Class;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.piesat.entity.Class;
 
 /**
  * <p>
@@ -12,5 +12,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2019-12-08
  */
 public interface IClassService extends IService<Class> {
-
+	
 }

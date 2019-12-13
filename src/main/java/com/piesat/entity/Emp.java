@@ -1,6 +1,8 @@
 package com.piesat.entity;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
+import java.sql.Date;
 import java.time.LocalDate;
 
 import com.baomidou.mybatisplus.annotation.IdType;
@@ -22,7 +24,7 @@ import lombok.experimental.Accessors;
 @Data
 @Accessors(chain = true)
 @Builder
-public class Emp{
+public class Emp implements Serializable{
 
     private static final long serialVersionUID = 1L;
 
@@ -35,7 +37,7 @@ public class Emp{
 
     private Integer mgr;
 
-    private LocalDate hiredate;
+    private Date hiredate;
 
     private BigDecimal sal;
 

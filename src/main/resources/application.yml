@@ -32,15 +32,15 @@ spring:
       key-prefix: redis-cache
       time-to-live: 600000ms
       use-key-prefix: true
-    cache-names: userCache,allUsersCache
+    cache-names: empCache,allUsersCache
   redis:
-    #host: 127.0.0.1
+    #host: 192.168.5.125
     #port: 6379
     database: 0
     #配置redis集群
     cluster:
       nodes: 192.168.5.125:6379,192.168.5.125:6380,192.168.5.125:6381
-    #哨兵配置
+    #哨兵配置,哨兵系统的作用: 监控、自动故障转移、配置提供者、通知。
     sentinel:
       master: mymaster
       nodes: 192.168.5.125:26379,192.168.5.125:26380,192.168.5.125:26381
@@ -54,7 +54,7 @@ spring:
   datasource:
     name: mysqlDatasource
     #测试服务器地址
-    url: jdbc:mysql://192.168.164.131:3306/testsql?useUnicode=true&characterEncoding=utf8&useSSL=false&tinyInt1isBit=true
+    url: jdbc:mysql://192.168.5.127:3306/testsql?useUnicode=true&characterEncoding=utf8&useSSL=false&tinyInt1isBit=true
     #测试数据库账号
     username: root
     #测试数据库密码
