@@ -10,7 +10,7 @@ server:
   port: 8080  
 
 logging: 
-  file: ./logs/core.log
+  #file: ./logs/core.log
   level: 
      #com.piesat: error
      com.piesat.mapper: debug
@@ -25,6 +25,32 @@ mybatis-plus:
 --- 
 spring:
   profiles: dev
+  cache:
+    type: redis
+    redis:
+      cache-null-values: false 
+      key-prefix: redis-cache
+      time-to-live: 600000ms
+      use-key-prefix: true
+    cache-names: userCache,allUsersCache
+  redis:
+    #host: 127.0.0.1
+    #port: 6379
+    database: 0
+    #配置redis集群
+    cluster:
+      nodes: 192.168.5.125:6379,192.168.5.125:6380,192.168.5.125:6381
+    #哨兵配置
+    sentinel:
+      master: mymaster
+      nodes: 192.168.5.125:26379,192.168.5.125:26380,192.168.5.125:26381
+    lettuce:
+      shutdown-timeout: 200ms
+      pool:
+        max-active: 7
+        max-idle: 7
+        min-idle: 2
+        max-wait: -1ms
   datasource:
     name: mysqlDatasource
     #测试服务器地址
