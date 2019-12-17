@@ -32,18 +32,14 @@ spring:
       key-prefix: redis-cache
       time-to-live: 600000ms
       use-key-prefix: true
-    cache-names: empCache,allUsersCache
+    #cache-names: empCache,allUsersCache
   redis:
     #host: 192.168.5.125
     #port: 6379
-    database: 0
+    #database: 0
     #配置redis集群
-    cluster:
-      nodes: 192.168.5.125:6379,192.168.5.125:6380,192.168.5.125:6381
-    #哨兵配置,哨兵系统的作用: 监控、自动故障转移、配置提供者、通知。
-    sentinel:
-      master: mymaster
-      nodes: 192.168.5.125:26379,192.168.5.125:26380,192.168.5.125:26381
+    #cluster:
+      #nodes: 192.168.5.125:6379,192.168.5.125:6380,192.168.5.125:6381
     lettuce:
       shutdown-timeout: 200ms
       pool:
@@ -51,6 +47,10 @@ spring:
         max-idle: 7
         min-idle: 2
         max-wait: -1ms
+    #哨兵配置,哨兵系统的作用: 监控、自动故障转移、配置提供者、通知。
+    sentinel:
+      master: mymaster
+      nodes: 192.168.5.125:26379,192.168.5.125:26380,192.168.5.125:26381
   datasource:
     name: mysqlDatasource
     #测试服务器地址
