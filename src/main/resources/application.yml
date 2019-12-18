@@ -10,7 +10,7 @@ server:
   port: 8080  
 
 logging: 
-  file: ./logs/core.log
+  #file: ./logs/core.log
   level: 
      #com.piesat: error
      com.piesat.mapper: debug
@@ -25,6 +25,9 @@ mybatis-plus:
 --- 
 spring:
   profiles: dev
+  data:
+    mongodb:
+      uri: mongodb://root:root@192.168.5.124:27017/mongodbtest
   datasource:
     name: mysqlDatasource
     #测试服务器地址

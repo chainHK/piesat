@@ -6,10 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @MapperScan("com.piesat.mapper")
 @SpringBootApplication
-public class MavenPluginBuildDockerApplication {
+public class PiesatProjectApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MavenPluginBuildDockerApplication.class, args);
+		SpringApplication.run(PiesatProjectApplication.class, args);
 	}
 
 }
