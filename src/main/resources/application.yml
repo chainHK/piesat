@@ -17,6 +17,7 @@ logging:
 
 mybatis-plus:
   #MyBatis 配置文件位置，如果您有单独的 MyBatis 配置，请将其路径配置到 configLocation 中
+  #config-location: classpath:mybatis/mybatis-config.xml
   mapper-locations: classpath*:mybatis/*.xml
   #MyBaits 别名包扫描路径，通过该属性可以给包中的类注册别名，注册后在 Mapper 对应的 XML 文件中可以直接使用类名，
   #而不用使用全限定的类名（即 XML 中调用的时候不用包含包名）。
@@ -28,7 +29,7 @@ spring:
   datasource:
     name: mysqlDatasource
     #测试服务器地址
-    url: jdbc:mysql://192.168.164.131:3306/testsql?useUnicode=true&characterEncoding=utf8&useSSL=false&tinyInt1isBit=true
+    url: jdbc:mysql://192.168.5.127:3307/shiro?useUnicode=true&characterEncoding=utf8&useSSL=false&tinyInt1isBit=true
     #测试数据库账号
     username: root
     #测试数据库密码
@@ -51,14 +52,16 @@ spring:
     timeBetweenEvictionRunsMillis: 60000
     useGlobalDataSourceStat: true
     validationQuery: SELECT 1 FROM DUAL
-    
+  jpa:
+    open-in-view: false
+  
 --- 
 spring:
   profiles: prod
   datasource:
     name: mysqlDatasource
     #测试服务器地址
-    url: jdbc:mysql://192.168.164.131:3306/testsql?useUnicode=true&characterEncoding=utf8&useSSL=false&tinyInt1isBit=true
+    url: jdbc:mysql://192.168.164.131:3307/user?useUnicode=true&characterEncoding=utf8&useSSL=false&tinyInt1isBit=true
     #测试数据库账号
     username: root
     #测试数据库密码

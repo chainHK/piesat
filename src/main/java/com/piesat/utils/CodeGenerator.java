@@ -61,7 +61,7 @@ public class CodeGenerator {
 
 		// 数据源配置
 		DataSourceConfig dsc = new DataSourceConfig();
-		dsc.setUrl("jdbc:mysql://localhost:3306/testsql?useUnicode=true&characterEncoding=utf8&useSSL=false&tinyInt1isBit=true");
+		dsc.setUrl("jdbc:mysql://192.168.5.127:3307/shiro?useUnicode=true&characterEncoding=utf8&useSSL=false&tinyInt1isBit=true");
 		// dsc.setSchemaName("public");
 		dsc.setDriverName("com.mysql.jdbc.Driver");
 		dsc.setUsername("root");
@@ -128,12 +128,12 @@ public class CodeGenerator {
 		strategy.setEntityLombokModel(true);
 		strategy.setRestControllerStyle(true);
 		// 公共父类
-		strategy.setSuperControllerClass("com.piesat.common.BaseController");
+		//strategy.setSuperControllerClass("com.piesat.common.BaseController");
 		// 写于父类中的公共字段
-		strategy.setSuperEntityColumns("id");
-		strategy.setInclude("class,emp".split(","));
+		//strategy.setSuperEntityColumns("id");
+		strategy.setInclude("t_user,t_role,t_permission".split(","));
 		strategy.setControllerMappingHyphenStyle(true);
-		strategy.setTablePrefix(pc.getModuleName() + "_");
+		strategy.setTablePrefix(pc.getModuleName() + "t_");
 		mpg.setStrategy(strategy);
 		mpg.setTemplateEngine(new FreemarkerTemplateEngine());
 		mpg.execute();
