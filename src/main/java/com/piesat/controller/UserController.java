@@ -4,6 +4,7 @@ import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
@@ -18,6 +19,7 @@ import com.piesat.entity.User;
 import com.piesat.service.IUserService;
 import com.piesat.utils.JsonResult;
 
+@Slf4j
 @RestController
 @RequestMapping("/user")
 public class UserController {
